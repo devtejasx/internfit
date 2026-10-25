@@ -1,5 +1,7 @@
 # InternFit
 
+**Live:** https://internfit-drab.vercel.app · Docs: [research](docs/01-research-report.md) · [interview kit](docs/02-interview-kit.md) · [product spec](docs/03-product-spec.md) · [experiment plan](docs/04-experiment-plan.md) · [submission summary](docs/05-submission-summary.md) · [evidence](evidence/README.md)
+
 **Know if you fit before you apply.** InternFit is a free, mobile-first AI fit check for Indian college students. Paste your experience and one internship description, and in about 30 seconds you get:
 
 - an honest fit verdict (Strong / Moderate / Stretch / Weak) and why
