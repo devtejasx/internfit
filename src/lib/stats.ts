@@ -32,7 +32,8 @@ export function median(xs: number[]): number | null {
 const ratio = (a: number, b: number) => (b ? Math.round((a / b) * 1000) / 1000 : null);
 
 export function computeStats(all: StoredEvent[], cohort: string | null = null): Stats {
-  const events = cohort ? all.filter((e) => e.meta.cohort === cohort) : all;
+  // Our own smoke tests use ?c=test; keep them out of the overall numbers.
+  const events = cohort ? all.filter((e) => e.meta.cohort === cohort) : all.filter((e) => e.meta.cohort !== "test");
   const totals: Record<string, number> = {};
   const sessions = new Map<EventName, Set<string>>();
   for (const e of events) {

@@ -170,6 +170,9 @@ describe("stats", () => {
     expect(s.feedback).toMatchObject({ responses: 1, meanRating: 5, usefulShare: 1, wouldUseYesShare: 1, medianUsualMinutes: 40 });
     expect(s.byDay["2026-10-25"]).toEqual({ started: 3, copied: 1 });
   });
+  it("excludes the internal test cohort from overall numbers", () => {
+    expect(computeStats([...events, ev("workflow_started", "t1", { cohort: "test" })]).primary.started).toBe(3);
+  });
   it("filters by cohort", () => {
     expect(computeStats(events, "p").primary.completionRate).toBe(1);
   });
